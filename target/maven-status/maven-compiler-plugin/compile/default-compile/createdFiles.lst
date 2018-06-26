@@ -1,0 +1,17 @@
+com/verizon/devops/jpa/ServiceRepository.class
+com/verizon/devops/jpa/Project.class
+com/verizon/devops/jpa/User.class
+com/verizon/devops/jpa/ServiceRole.class
+com/verizon/devops/jpa/Stage.class
+com/verizon/devops/ClusterUIApplication.class
+com/verizon/devops/jpa/ServiceRoleRepository.class
+com/verizon/devops/jpa/Priv.class
+com/verizon/devops/jpa/UserRepository.class
+com/verizon/devops/jpa/PrivRepository.class
+com/verizon/devops/jpa/Role.class
+com/verizon/devops/jpa/Service.class
+com/verizon/devops/ResourceController.class
+com/verizon/devops/exception/ResourceNotFoundException.class
+com/verizon/devops/jpa/StageRepository.class
+com/verizon/devops/jpa/RoleRepository.class
+com/verizon/devops/jpa/ProjectRepository.class

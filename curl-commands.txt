@@ -1,0 +1,83 @@
+
+###list all users
+curl -X GET http://localhost:8080/clusterui/users
+###get user
+curl -X GET http://localhost:8080/clusterui/users/hongmei
+###add user
+curl -H "Content-Type: application/json" -X POST -d {\"name\":\"hongmei\",\"email\":\"hongmei.yao@verizon.com\"} http://localhost:8080/clusterui/users
+### update user
+curl -H "Content-Type: application/json" -X PUT -d @user.json  http://localhost:8080/clusterui/users/hongmei
+### delete user
+curl -XDELETE http://localhost:8080/clusterui/users/hongmei
+
+
+###list all projects
+curl -X GET http://localhost:8080/clusterui/projects
+###get project
+curl -X GET http://localhost:8080/clusterui/projects/proj1
+###add project
+curl -H "Content-Type: application/json" -X POST -d {\"name\":\"proj3\"} http://localhost:8080/clusterui/projects
+###update project
+curl -H "Content-Type: application/json" -X PUT -d {\"name\":\"proj3\",\"description\":\"project3\"} http://localhost:8080/clusterui/projects/proj3
+###delete project
+curl -X DELETE http://localhost:8080/clusterui/projects/proj3
+
+##assign User To Project
+curl -X PUT http://localhost:8080/clusterui/users/hongmei/projects/proj1/add
+##remove User From Project
+curl -X PUT http://localhost:8080/clusterui/users/hongmei/projects/proj1/remove
+
+## assign user to service as role X
+curl -X PUT http://localhost:8080/clusterui/users/hongmei/services/service1/role1/dev/add"
+## remove user from service 
+curl -X PUT http://localhost:8080/clusterui/users/hongmei/services/service1/remove
+
+##list services in a project
+curl -X GET http://localhost:8080/clusterui/projects/proj1/services
+
+###list all services
+curl -X GET http://localhost:8080/clusterui/services
+###get service
+curl -X GET http://localhost:8080/clusterui/services/service1
+###add service
+curl -H "Content-Type: application/json" -X POST -d {\"name\":\"service3\",\"theProject\":{\"name\":\"proj3\"}} http://localhost:8080/clusterui/services
+###update service
+curl -H "Content-Type: application/json" -X PUT -d {\"name\":\"service3\",\"theProject\":{\"name\":\"proj3\"}} http://localhost:8080/clusterui/services/service3
+###delete service
+curl -X DELETE http://localhost:8080/clusterui/services/service3
+
+###list all roles
+curl -X GET http://localhost:8080/clusterui/roles
+###get role
+curl -X GET http://localhost:8080/clusterui/roles/role1
+###add role
+curl -H "Content-Type: application/json" -X POST -d {\"name\":\"role4\"} http://localhost:8080/clusterui/roles
+###update role
+curl -H "Content-Type: application/json" -X PUT -d @role.json http://localhost:8080/clusterui/roles/role4
+###delete role
+curl -X DELETE http://localhost:8080/clusterui/roles/role4
+
+
+###list all privs
+curl -X GET http://localhost:8080/clusterui/privs
+###get priv
+curl -X GET http://localhost:8080/clusterui/privs/GET
+###add priv
+curl -H "Content-Type: application/json" -X POST -d @priv.json "http://localhost:8080/clusterui/privs"
+###update priv
+curl -H "Content-Type: application/json" -X PUT -d @priv.json http://localhost:8080/clusterui/privs/DELETE
+###delete priv
+curl -X DELETE http://localhost:8080/clusterui/privs/DELETE
+
+
+###list all stages
+curl -X GET http://localhost:8080/clusterui/stages
+###get stage
+curl -X GET http://localhost:8080/clusterui/stages/qa
+###add stage
+curl -H "Content-Type: application/json" -X POST -d {\"name\":\"production\"} "http://localhost:8080/clusterui/stages"
+###update priv
+curl -H "Content-Type: application/json" -X PUT -d {\"name\":\"production\"}  http://localhost:8080/clusterui/stages/production
+###delete priv
+curl -X DELETE http://localhost:8080/clusterui/stages/production
+

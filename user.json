@@ -1,0 +1,71 @@
+{
+"name":"hongmei",
+"email":"hongmei.yao@verizon.com",
+"roles":[
+{
+   "name":"service_role_1",
+   "theService":{
+      "name":"service1",
+	  "theProject":{
+	     "name":"proj1",
+		 "description":"project 1"
+	  }
+   },
+   "theRole": {
+      "name":"role1",
+	  "description":"role1",
+	  "privs":[]
+   },
+   "theEnv": {"name":"dev"}
+},
+{
+   "name":"service_role_2",
+   "theService":{
+      "name":"service1",
+	  "theProject":{
+	     "name":"proj1",
+		 "description":"project 1"
+	  }
+   },
+   "theRole": {
+      "name":"role2",
+	  "description":"role2",
+	  "privs":[]
+   },
+   "theEnv": {"name":"qa"}
+},
+{
+   "name":"service_role_3",
+   "theService":{
+      "name":"service2",
+	  "theProject":{
+	     "name":"proj1",
+		 "description":"project 1"
+	  }
+   },
+   "theRole": {
+      "name":"role1",
+	  "description":"role1",
+	  "privs":[]
+   },
+   "theEnv": {"name":"qa"}
+},
+{
+   "name":"service_role_4",
+   "theService":{
+      "name":"service3",
+	  "theProject":{
+	     "name":"proj2",
+		 "description":"project 2"
+	  }
+   },
+   "theRole": {
+      "name":"role3",
+	  "description":"role3",
+	  "privs":[]
+   },
+   "theEnv": {"name":"staging"}
+}
+],
+"projects":[{"name":"proj1", "description":"project 1"}]
+}

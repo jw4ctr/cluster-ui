@@ -1,0 +1,17 @@
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/Priv.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/PrivRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/RoleRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/ProjectRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/Stage.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/ServiceRole.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/ServiceRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/Project.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/ClusterUIApplication.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/StageRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/exception/ResourceNotFoundException.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/ServiceRoleRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/ResourceController.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/User.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/UserRepository.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/Role.java
+/home/staging/cluster-ui/src/main/java/com/verizon/devops/jpa/Service.java

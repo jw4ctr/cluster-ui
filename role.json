@@ -1,0 +1,4 @@
+{"name":"role4",
+"description":"role 4",
+ "privs":[{"name":"GET","action":"GET"}, {"name":"UPDATE","action":"UPDATE"}]
+}
