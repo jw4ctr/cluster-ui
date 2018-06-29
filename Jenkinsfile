@@ -66,7 +66,7 @@ echo "Test succeeded"
                      from: 'jenkins-admin@gmail.com',
                      replyTo: '',
                      subject: "${JOB_NAME} ${BUILD_NUMBER} succeeded",
-                     to: jw4ctr@hotmail.com)
+                     to: env.notification_email)
                      if (env.archive_war =='yes')
                      {
              // ArchiveArtifact plugin
@@ -86,7 +86,7 @@ echo "Test succeeded"
                  from: 'jenkins-admin@gmail.com',
                  replyTo: '',
                  subject: "${JOB_NAME} ${BUILD_NUMBER} failed",
-                 to: jw4ctr@hotmail.com)
+                 to: env.notification_email)
                  cucumber fileIncludePattern: '**/java-calculator/target/cucumber-report.json', sortingMethod: 'ALPHABETICAL'
 //publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/tester/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
         }
