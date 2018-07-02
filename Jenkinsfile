@@ -21,7 +21,7 @@ thirdEnvVar= 'THIRD_VAR'
                 environment name: 'run_test_only', value: 'yes'
             }
             steps{
-                sh 'cd from-jenkins && echo hello_test >> from-jenkins/test.txt'
+                sh 'mkdir from-jenkins && echo hello_test >> from-jenkins/test.txt'
             }
         }
 //5. demo parallel stage with script
