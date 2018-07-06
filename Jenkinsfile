@@ -67,13 +67,13 @@ echo "Test succeeded"
                      replyTo: '',
                      subject: "${JOB_NAME} ${BUILD_NUMBER} succeeded",
                      to: env.notification_email)
-                     if (env.archive_war =='yes')
-                     {
+                     //if (env.archive_war =='yes')
+                     //{
              // ArchiveArtifact plugin
-                        archiveArtifacts '**/java-calculator-*-SNAPSHOT.jar'
-                      }
+                       // archiveArtifacts '**/java-calculator-*-SNAPSHOT.jar'
+                      //}
                        // Cucumber report plugin
-                      cucumber fileIncludePattern: '**/java-calculator/target/cucumber-report.json', sortingMethod: 'ALPHABETICAL'
+                      //cucumber fileIncludePattern: '**/java-calculator/target/cucumber-report.json', sortingMethod: 'ALPHABETICAL'
             //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/home/reports', reportFiles: 'reports.html', reportName: 'Performance Test Report', reportTitles: ''])
             }
         //}
