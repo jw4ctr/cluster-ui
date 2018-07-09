@@ -21,7 +21,7 @@ thirdEnvVar= 'THIRD_VAR'
                 environment name: 'run_test_only', value: 'yes'
             }
             steps{
-                sh 'if [ -e from-jenkins ] ; then rm -r from-jenkins'
+                sh 'if [ -e from-jenkins ] ; then rm -r from-jenkinsi;fi'
                 sh 'mkdir from-jenkins && echo hello_test >> from-jenkins/test.txt'
             }
         }
