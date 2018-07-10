@@ -8,13 +8,14 @@ pipeline {
         string(defaultValue: "your.email@gmail.com", description: 'email for notifications', name: 'notification_email')
     }
 
+/*
 def label = "worker-${UUID.randomUUID().toString()}"
 
 podTemplate(label: label, containers: [
   containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
   containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true)
 ])
-
+*/
 
 //3. Environment variables
 environment {
@@ -30,9 +31,9 @@ thirdEnvVar= 'THIRD_VAR'
                 environment name: 'run_test_only', value: 'yes'
             }
             steps{
-               container('kubectl') {
+ //              container('kubectl') {
                  sh "kubectl get pods --all-namespaces"
-               }
+ //              }
             }
         }
 //5. demo parallel stage with script
