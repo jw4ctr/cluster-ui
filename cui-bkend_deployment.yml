@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/home/staging/farm/cuimnt/mysql/"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: hmstg-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/home/staging/farm/cuimnt/hmstgmnt/"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hmstg-pvc-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cuibkenddep
+  labels:
+    purpose: demonstrate-command
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+         app: cuibkenddep
+    spec:
+      containers:
+      - name: cuibkend-term-demo
+        image: 10.116.27.82:5000/clusterui-instance
+        ports:
+          - containerPort: 8080
+          - containerPort: 80
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo ; sleep 60;done"]
+        volumeMounts:
+          - name: varlog
+            mountPath: /var/log
+          - name: mysql-pv-db
+            mountPath: /var/lib/mysql
+          - name: hmstg-pv-mnt
+            mountPath: /home/staging/
+      volumes:
+        - name: varlog
+          emptyDir: {}
+        - name: mysql-pv-db
+          persistentVolumeClaim:
+           claimName: mysql-pvc-claim
+        - name: hmstg-pv-mnt
+          persistentVolumeClaim:
+           claimName: hmstg-pvc-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-rest
+spec:
+  selector:
+    app: cuibkenddep
+  ports:
+    - name: cuibkend
+      protocol: TCP
+      port: 28080
+      targetPort: 8080
+    - name: cuiweb
+      protocol: TCP
+      port: 28282
+      targetPort: 80

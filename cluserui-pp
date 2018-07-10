@@ -122,8 +122,8 @@ pipeline {
                 // Validate kubectl
                 sh "kubectl cluster-info"
 
-                // Init helm client
-                sh "helm init"
+                // Init helm client  -- not using helm
+                // sh "helm init"
 
                 // Make sure parameters file exists
                 script {
