@@ -30,9 +30,9 @@ thirdEnvVar= 'THIRD_VAR'
                 environment name: 'run_test_only', value: 'yes'
             }
             steps{
-		container('kubectl') {
-                sh "kubectl get pods --all-namespaces"
-		}
+               container('kubectl') {
+                 sh "kubectl get pods --all-namespaces"
+               }
             }
         }
 //5. demo parallel stage with script
