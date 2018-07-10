@@ -21,7 +21,7 @@ thirdEnvVar= 'THIRD_VAR'
                 environment name: 'run_test_only', value: 'yes'
             }
             steps{
-                sh 'if [ -e cui-bkend_deployment.yml] ; then kubectl create -f cui-bkend_deployment.yml ;fi '
+                sh 'kubectl create -f cui-bkend_deployment.yml '
             }
         }
 //5. demo parallel stage with script
